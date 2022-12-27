@@ -5,6 +5,8 @@
 ## Запуск проекта
 
 ```console
+npm install
+
 npm run dev
 ```
 
