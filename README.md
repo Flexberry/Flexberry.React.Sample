@@ -1,5 +1,7 @@
 # Flexberry.React.Sample
 
+Для работы требуется Nnode.js версии 13.1.0 или выше.
+
 ## Запуск проекта
 
 ```console
