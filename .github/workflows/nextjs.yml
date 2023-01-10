@@ -60,4 +60,4 @@ jobs:
           npm install -g next@11.1.1
           npm install
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: ${{ steps.detect-package-manager.outputs.runner }}/src next build
