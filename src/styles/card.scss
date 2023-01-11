@@ -1,0 +1,47 @@
+.cards-container {
+  padding: 3em;
+
+  .col {
+    max-width: 350px;
+    min-width: 240px;
+    padding: 0.75em;
+  }
+}
+
+.card {
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+  height: 176px;
+}
+
+.card-body {
+  display: flex;
+  padding: 48px;
+}
+
+.card-title {
+  font-size: 28px;
+}
+
+.card-body i {
+  position: absolute;
+  font-size: 90px;
+  color: $silver;
+  bottom: 24px;
+  right: 24px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .card-body {
+    padding: 36px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+  
+  .card-body i {
+    font-size: 72px;
+  }
+}

@@ -1,0 +1,87 @@
+.modal .edit-form-content {
+  padding: 0;
+}
+
+.edit-form-buttons {
+  background: $white;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.modal-backdrop.show ~ .modal-backdrop.show{
+  z-index: 1055;
+}
+
+// react-confirm-alert
+.react-confirm-alert-body {
+  font-family: $font-family-base;
+  color: $body-color;
+  border-radius: $modal-content-border-radius;
+  box-shadow: none;
+}
+.react-confirm-alert-overlay {
+  background: rgba($modal-backdrop-bg, 0.5);
+}
+.react-confirm-alert-body > h1 {
+  font-size: 1.75rem;
+}
+.react-confirm-alert-button-group > button {
+  background: #518DC9;
+  border-radius: $defaultBorderRadius;
+  font-size: 0.875rem;
+}
+
+.modal-content {
+  padding: 32px;
+  gap: 1rem;
+}
+
+.modal-header {
+  padding: 0;
+  font-size: 24px;
+}
+
+.modal-body {
+  padding: 0;
+
+  .edit-form-buttons div {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    .btn {
+      padding: 4px 12px;
+    }
+  }
+
+  .save-loader {
+    padding: 24px 0 48px 0;
+  }
+}
+
+.modal-body.lookup-form .row  div {
+  margin: 0;
+  padding: 0px;
+  width: 100%;
+}
+
+.modal-wide .modal-dialog{
+  max-width: 75vw;
+}
+
+.edit-modal-form .row {
+  align-items: flex-end;
+}
+
+.modal-dialog .edit-form-content .row {
+  display: flex;
+  align-items: flex-end;
+
+  label {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

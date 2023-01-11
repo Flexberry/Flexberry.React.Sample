@@ -1,0 +1,16 @@
+.dictionary-block fieldset {
+  padding: 8px 16px 8px 32px;
+} 
+
+.dictionary-inner-block {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  line-height: 28px;
+}
+
+.dictionary-link {
+  display: inline;
+  width: fit-content;
+  text-decoration: none;
+}

@@ -1,0 +1,63 @@
+// five cols grid
+.col-8-of-5 {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(8, 10);
+  }
+}
+
+.col-6-of-5 {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(6, 10);
+  }
+}
+
+.col-4-of-5 {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(4, 10);
+  }
+}
+
+.col-2-of-5 {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(2, 10);
+  }
+}
+
+.col.fixed-125 {
+  width: 125px;
+  flex: 0 0 auto
+}
+
+// two columns form width divider
+.two-columns-form-divider > .col-sm-6:first-child {
+  
+  // Кастомный border-right
+  background-image: $vertical-grid-border;
+  background-position: right;
+  background-size: 1px 5px;
+  background-repeat: repeat-y;
+
+  padding-right: 30px;
+}
+
+.two-columns-form-divider > .col-sm-6:last-child {
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .two-columns-form-divider.row > .col-sm-6 {
+    min-width: 805px;
+    padding: 0 12px;
+  }
+  .two-columns-form-divider > .col-sm-6:first-child {
+    background-image: none;
+  }
+}
