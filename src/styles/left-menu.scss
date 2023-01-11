@@ -1,0 +1,38 @@
+.left-menu {
+  padding-top: 25px;
+  padding-bottom: 10px;
+  font-weight: 682;
+  font-size: 16px;
+  background-color: $defaultBlue;
+
+  &.collapsed {
+    width: $leftMenuCollapsedWidth !important;
+  }
+
+  &.expanded {
+    width: $leftMenuWidth;
+  }
+
+  .nav-link i {
+    margin-right: 15px;
+  }
+
+  .contacts {
+    color: $white70;
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    bottom: 0;
+    padding: 0 0 24px 12px;
+    line-height: 18px;
+    a {
+      color: $white90;
+    }
+  }
+
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+
+}

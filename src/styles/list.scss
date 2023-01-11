@@ -1,0 +1,212 @@
+$tableBorder: 1px solid rgba(0, 0, 0, 0.1);
+
+.list-form-search {
+  padding: 16px 32px;
+  display: flex;
+  flex-direction: row;
+
+  .col-sm-2 {
+    padding: 0;
+    margin: 0 0 0 12px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+.list-form-buttons {
+  padding: 16px 32px;
+}
+
+.list-form-content.row {
+  padding: 0 32px;
+}
+
+.table-container .table-responsive {
+  border: $tableBorder;
+  box-shadow: 0px 4px 12px rgba(95, 95, 95, 0.153646);
+  border-radius: $defaultBorderRadius;
+}
+
+.table-responsive .table {
+  margin: 0;
+}
+
+.table-responsive .table thead {
+  border-bottom: $tableBorder;
+  color: $darkGrey;
+}
+
+.table-responsive .table thead th {
+  font-weight: 500;
+  vertical-align: middle;
+
+  i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  i::before {
+    font-size: 14px;
+  }
+}
+
+.list-helper-column-layout {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    color: $active;
+  }
+}
+
+.th-cell-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.groupEdit .table-responsive,
+.detail-list .table-responsive
+ {
+  overflow-x: visible;
+}
+
+.groupEdit .table-responsive .table thead th {
+  font-weight: normal;
+  font-size: 0.875rem;
+}
+
+.pagination {
+  color: $pagination-color;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-pages-count { 
+  min-width: 6.5rem;
+}
+
+.pagination-page-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.page-item {
+  background: $pagination-bg;
+  color: $pagination-color;
+  border-radius: 4px;
+  
+  &.active {
+    background: $pagination-active-bg;
+    color: $pagination-active-color;
+  }
+
+  &.disabled i {
+    color: $pagination-disabled-color;
+  }
+}
+
+.page-link, .disabled .page-link{
+  background-color: transparent;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .overflow-page-number {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  i {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.page-item-fixed-width {
+  max-width: 40px;
+}
+
+.groupedit-tr td:first-child{
+  height: 64px;
+}
+
+.list-without-border .table-responsive {
+  &, thead, td {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .th-cell-layout {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .list-helper-column-layout {
+    padding: 12px 0;
+  }
+}
+
+.list-without-thead thead {
+  display: none;
+}
+
+.detail-list td {
+  vertical-align: middle;
+
+  .icon-guideline-show {
+    color: $active;
+  }
+
+  &.list-without-thead {
+    text-align: left;
+  }
+}
+
+// Суперкастомный класс для DetailList "Cобственники"
+.sobstvenniki-list {
+  td:nth-child(2) {
+    font-weight: 600;
+  }
+  td:nth-child(4) {
+    min-width: 440px;
+  }
+}
+
+.col-2-of-5 .title {
+  height: 38px;
+}
+
+@media screen and (max-width: 1200px) {
+  .groupEdit .table-responsive .table thead th,
+  .edit-form-content tr td, .list-form-content tr td, .list-form-search tr td {
+    padding: 6px !important;
+    font-size: 12px;
+  }
+    
+}
