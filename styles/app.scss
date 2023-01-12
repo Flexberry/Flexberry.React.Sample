@@ -72,11 +72,11 @@ $min-contrast-ratio: 3;
 // Bootstrap and its default variables
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import "styles/header";
-@import "styles/left-menu";
+@import "header";
+@import "left-menu";
 // @import "styles/grid";
 // @import "styles/list";
-@import "styles/card";
+@import "card";
 // @import "styles/checkbox";
 // @import "styles/dictionary";
 // @import "styles/modal";
@@ -332,5 +332,5 @@ fieldset legend {
 }
 
 .app.content.col {
-  width: calc(100vw - 56px);
+  height: calc(100vh - 72px);
 }
