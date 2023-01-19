@@ -1,26 +1,25 @@
 import axios from "axios";
 
-const config = {
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-  }
-};
-
 export function GetData(url: string) {
   return axios.get(url).then((res) => {
     return res;
   });
 }
 
-export function PutData(url: string) {
-  var asd = 100;
+export function PostData(url: string, data: object) {
+  return axios.post(url, data).then((res) => {
+    return res;
+  });
 }
 
-export function PostData(url: string) {
-
+export function PutData(url: string, data: object) {
+  return axios.put(url, data).then((res) => {
+    return res;
+  });
 }
 
 export function DeleteData(url: string) {
-
+  return axios.delete(url).then((res) => {
+    return res;
+  });
 }
