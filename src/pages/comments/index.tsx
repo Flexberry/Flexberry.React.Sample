@@ -1,32 +1,39 @@
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import useSWR from "swr";
-import Link from 'next/link';
-import { Form } from 'react-bootstrap';
+import Table from 'react-bootstrap/Table';
 import { GetData } from '../../utils/requestController';
 
-// Customers edit form.
+// Customers list form.
 const CommentListForm = () => {
-  const [id, setId] = useState('');
+  const router = useRouter()
 
   const fetcher = (url) => GetData(url).then((res) => res.data);
   const { data } = useSWR(`${process.env.API_URL}/comments`, fetcher);
 
   return (
-    <div className="Form">
-      <Form.Label>Comments</Form.Label>
-      <Form.Group>
-        <Form.Label>ID model</Form.Label>
-        <Form.Select  style={{ width: '18rem' }} aria-label={id} onChange={(e) => setId(e.target.value)}>
-            <option value='' key='empty'></option>
-          {(data == null ? [] : data).map((key) => (
-            <option value={key.primarykey} key={key.primarykey}>{key.primarykey}</option>
-          ))}
-        </Form.Select>
-      </Form.Group>
-      {id ? (
-        <Link href={`/comments/${id}`} className="nav-link" passHref legacyBehavior>Edit Form</Link>
-      ) : ('')}
-      </div>
+    <div>
+      <h2>Comment list form</h2>
+      <Table striped bordered hover>
+         <thead>
+           <tr>
+             <th>Date</th>
+             <th>Text</th>
+             <th>Customer name</th>
+             <th>Customer age</th>
+           </tr>
+         </thead>
+         <tbody>
+           {(data == null ? [] : data).map((prop) => (
+             <tr key={prop.primarykey} onClick={() => router.push(`/comments/${prop.primarykey}`)}>
+               <td>{prop.commentDate}</td>
+               <td>{prop.commentText}</td>
+               <td>{prop.customer.name}</td>
+               <td>{prop.customer.age}</td>
+             </tr>
+           ))}
+         </tbody>
+      </Table>
+    </div>
   );
 }
 

@@ -1,8 +1,8 @@
 const HOME_ROUTE = '/'
 const ABOUT_ROUTE = '/about'
 const SERVER_REQUESTS = '/serverrequests'
-const COMMENTS = './comments'
-const CUSTOMERS = './customers'
+const COMMENTS = '/comments'
+const CUSTOMERS = '/customers'
 
 export const headerLinks = [
   {
