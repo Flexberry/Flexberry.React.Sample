@@ -8,7 +8,6 @@ import { GetData } from '../../utils/requestController';
 const CommentListForm = () => {
   const [id, setId] = useState('');
 
-  // Example SWR, get models.
   const fetcher = (url) => GetData(url).then((res) => res.data);
   const { data } = useSWR(`${process.env.API_URL}/comments`, fetcher);
 
