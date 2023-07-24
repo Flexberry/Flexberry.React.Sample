@@ -1,6 +1,8 @@
 const HOME_ROUTE = '/'
 const ABOUT_ROUTE = '/about'
 const SERVER_REQUESTS = '/serverrequests'
+const COMMENTS = './comments'
+const CUSTOMERS = './customers'
 
 export const headerLinks = [
   {
@@ -22,5 +24,13 @@ export const leftMenuLinks: { caption: string, path: string }[] = [
   {
     caption: 'Тест запросов к серверу',
     path: SERVER_REQUESTS,
+  },
+  {
+    caption: 'Comments',
+    path: COMMENTS,
+  },
+  {
+    caption: 'Customers',
+    path: CUSTOMERS,
   }
 ]
