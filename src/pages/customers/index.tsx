@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import useSWR from "swr";
-import Link from 'next/link';
-import { Form } from 'react-bootstrap';
+import Table from 'react-bootstrap/Table';
 import { GetData } from '../../utils/requestController';
 
-// Customers edit form.
+// Customers list form.
 const CustomerListForm = () => {
-  const [id, setId] = useState('');
+  const router = useRouter()
 
+  // Example SWR, get models.
   const fetcher = (url) => GetData(url).then((res) => res.data);
   const { data } = useSWR(`${process.env.API_URL}/customers`, fetcher);
 
   return (
-    <div className="Form">
-      <Form.Label>Customers</Form.Label>
-      <Form.Group>
-        <Form.Label>ID model</Form.Label>
-        <Form.Select  style={{ width: '18rem' }} aria-label={id} onChange={(e) => setId(e.target.value)}>
-            <option value='' key='empty'></option>
-          {(data == null ? [] : data).map((key) => (
-            <option value={key.primarykey} key={key.primarykey}>{key.primarykey}</option>
-          ))}
-        </Form.Select>
-      </Form.Group>
-      {id ? (
-        <Link href={`/customers/${id}`} className="nav-link" passHref legacyBehavior>Edit Form</Link>
-      ) : ('')}
-      </div>
+    <div>
+      <h2>Customer list form</h2>
+      <Table striped bordered hover>
+         <thead>
+           <tr>
+             <th>Name</th>
+             <th>Age</th>
+             <th>Comments count</th>
+           </tr>
+         </thead>
+         <tbody>
+           {(data == null ? [] : data).map((prop) => (
+             <tr key={prop.primarykey} onClick={() => router.push(`/customers/${prop.primarykey}`)}>
+               <td>{prop.name}</td>
+               <td>{prop.age}</td>
+               <td>{prop.comments.length}</td>
+             </tr>
+           ))}
+         </tbody>
+      </Table>
+    </div>
   );
 }
 
