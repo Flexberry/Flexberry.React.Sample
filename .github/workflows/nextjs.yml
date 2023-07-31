@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["main", "feature-233580-github-action"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,12 +33,12 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          if [ -f "${{ github.workspace }}/src/yarn.lock" ]; then
+          if [ -f "${{ github.workspace }}/src/react-sample/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
             echo "runner=yarn" >> $GITHUB_OUTPUT
             exit 0
-          elif [ -f "${{ github.workspace }}/src/package.json" ]; then
+          elif [ -f "${{ github.workspace }}/src/react-sample/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
             echo "runner=npx --no-install" >> $GITHUB_OUTPUT
@@ -52,15 +52,15 @@ jobs:
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          cache-dependency-path: src/yarn.lock
+          cache-dependency-path: src/react-sample/yarn.lock
       - name: Init NodeJS env
         run: |
           set -x
-          cd src
+          cd src/react-sample
           node -v
           npm install -g next@11.1.1
           npm install
       - name: Build with Next.js
         run: |
-          cd src
+          cd src/react-sample
           ${{ steps.detect-package-manager.outputs.runner }} next build
