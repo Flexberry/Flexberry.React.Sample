@@ -52,7 +52,7 @@ jobs:
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          cache-dependency-path: src/react-sample/yarn.lock
+          cache-dependency-path: src/react-sample/package-lock.json
       - name: Init NodeJS env
         run: |
           set -x
