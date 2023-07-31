@@ -3,7 +3,7 @@ import useSWR from "swr";
 import Table from 'react-bootstrap/Table';
 import { GetData } from '../../utils/requestController';
 
-// Customers list form.
+// Comments list form.
 const CommentListForm = () => {
   const router = useRouter()
 
