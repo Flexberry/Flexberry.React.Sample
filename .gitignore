@@ -1,7 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/src/node_modules
+/src/react-sample/node_modules
+/src/react-native-sample/node_modules
 /.pnp
 .pnp.js
 
@@ -9,11 +10,16 @@
 /coverage
 
 # next.js
-/src/.next/
+/src/react-sample/.next/
 /out/
 
+# Expo
+/src/react-native-sample/.expo/
+/src/react-native-sample/dist/
+/src/react-native-sample/web-build/
+
 # production
-/src/build
+/src/react-sample/build
 
 # misc
 .DS_Store
@@ -28,3 +34,21 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# macOS
+.DS_Store
+*.pem
+
+# typescript
+*.tsbuildinfo
