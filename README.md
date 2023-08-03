@@ -17,7 +17,7 @@ npm run dev
 ```console
 npm install
 
-npx expo start
+npx expo start --port 8088
 ```
 
 Открыть на эмуляторе (ios или android) / Открыть на телефоне в приложении `Expo Go`

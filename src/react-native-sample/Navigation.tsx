@@ -1,14 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { 
+import {
   Home,
   About,
   CommentListForm,
-  CustomerListForm
+  CommentEditForm,
+  CustomerListForm,
+  CustomerEditForm
 } from './screens/@ScreensExports';
 
 const Stack = createNativeStackNavigator();
-
 export const Navigation = () => {
   return (
     <NavigationContainer>
@@ -24,14 +25,24 @@ export const Navigation = () => {
           options={{title: 'О нас'}}
         />
         <Stack.Screen
-          name="Comments"
+          name="CommentsL"
           component={CommentListForm}
           options={{title: 'Comment list form'}}
         />
         <Stack.Screen
-          name="Customers"
+          name="CustomersL"
           component={CustomerListForm}
           options={{title: 'Customer list form'}}
+        />
+        <Stack.Screen
+          name="CommentsE"
+          component={CommentEditForm}
+          options={{title: 'Comment edit form'}}
+        />
+        <Stack.Screen
+          name="CustomersE"
+          component={CustomerEditForm}
+          options={{title: 'Customer edit form'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

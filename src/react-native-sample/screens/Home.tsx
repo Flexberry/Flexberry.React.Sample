@@ -16,13 +16,13 @@ export const Home = ({ navigation }) => {
       <Button
         title="Comments"
         onPress={() =>
-          navigation.navigate('Comments')
+          navigation.navigate('CommentsL')
         }
       />
       <Button
         title="Customers"
         onPress={() =>
-          navigation.navigate('Customers')
+          navigation.navigate('CustomersL')
         }
       />
       <StatusBar style="auto" />

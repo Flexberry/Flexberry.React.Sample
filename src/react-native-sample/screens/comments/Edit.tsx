@@ -1,12 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
+import React from "react";
 import { Text, View } from 'react-native';
+import { TextInput } from 'react-native-paper';
+import { DatePickerInput } from 'react-native-paper-dates';
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import useSWR from "swr";
+import { GetData } from '../../utils/requestController';
+import { en, registerTranslation } from 'react-native-paper-dates'
+registerTranslation('en', en)
 
-// Comments edit form.
-export const CommentEditForm = () => {
+
+// Comments list form.
+export const CommentEditForm = ({ route }) => {
+  const { id } = route.params;
+  const fetcher = (url) => GetData(url).then((res) => res.data);
+  // const { data } = useSWR(`${process.env.API_URL}/comments/${id}`, fetcher);
+  const { data } = useSWR(`http://localhost:8081/service/backend/api/comments/${id}`, fetcher);
+  var { commentDate, commentText, customer} = data || {};
+  const { name } = customer || {};
+
+  var [, setInputDate] = React.useState(commentDate);
   return (
-    <View>
-      <Text>Comments edit form</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <View>
+        <Text>Comments edit form {id}</Text>
+        <DatePickerInput
+          locale="en"
+          label="Date"
+          value={commentDate}
+          onChange={(inputDate) => setInputDate(inputDate)}
+          inputEnabled={true}
+          inputMode="start"
+        />
+
+        <TextInput
+          label="Comment"
+          value={commentText}
+          multiline
+        />
+
+        <TextInput
+          label="Client"
+          value={name}
+        />
+      </View>
+    </SafeAreaProvider>    
   );
 };
