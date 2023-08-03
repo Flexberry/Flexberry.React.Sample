@@ -5,9 +5,6 @@ import { DatePickerInput } from 'react-native-paper-dates';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import useSWR from "swr";
 import { GetData } from '../../utils/requestController';
-import { en, registerTranslation } from 'react-native-paper-dates'
-registerTranslation('en', en)
-
 
 // Comments list form.
 export const CommentEditForm = ({ route }) => {
@@ -24,7 +21,7 @@ export const CommentEditForm = ({ route }) => {
       <View>
         <Text>Comments edit form {id}</Text>
         <DatePickerInput
-          locale="en"
+          locale="ru"
           label="Date"
           value={commentDate}
           onChange={(inputDate) => setInputDate(inputDate)}

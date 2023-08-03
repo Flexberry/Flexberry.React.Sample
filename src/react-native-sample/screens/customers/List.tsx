@@ -10,7 +10,7 @@ export const CustomerListForm = ({ navigation }) => {
   // Example SWR, get models.
   const fetcher = (url: string) => GetData(url).then((res: { data: any; }) => res.data);
   const { data } = useSWR(`http://localhost:8081/service/backend/api/customers`, fetcher);
-  // const { data } = "http://localhost:8081//api/customers"
+  // const { data } = useSWR(`${process.env.EXPO_PUBLIC_API_URL}/customers`, fetcher);
   return (
     <View>
       <Text>Customer list form.</Text>
