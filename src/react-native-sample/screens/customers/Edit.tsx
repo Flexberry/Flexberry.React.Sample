@@ -6,6 +6,7 @@ import { Text } from 'react-native-paper';
 import useSWR from "swr";
 import { GetData } from '../../utils/requestController';
 
+// Customers edit form.
 export const CustomerEditForm = ({ route }) => {
   const { id } = route.params;
   const fetcher = (url) => GetData(url).then((res) => res.data);

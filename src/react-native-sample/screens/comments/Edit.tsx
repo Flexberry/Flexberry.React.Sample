@@ -6,7 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import useSWR from "swr";
 import { GetData } from '../../utils/requestController';
 
-// Comments list form.
+// Comments edit form.
 export const CommentEditForm = ({ route }) => {
   const { id } = route.params;
   const fetcher = (url) => GetData(url).then((res) => res.data);
