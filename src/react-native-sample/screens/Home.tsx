@@ -25,6 +25,12 @@ export const Home = ({ navigation }) => {
           navigation.navigate('CustomersL')
         }
       />
+      <Button
+        title="Requests"
+        onPress={() =>
+          navigation.navigate('Requests')
+        }
+      />
       <StatusBar style="auto" />
     </View>
   );
