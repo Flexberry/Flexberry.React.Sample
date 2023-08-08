@@ -27,7 +27,6 @@ export const ServerRequests = ({ navigation }) => {
 
   // GET requests.
   const handleGet = () => {
-    //GetData(`${process.env.EXPO_PUBLIC_API_URL}/${enumValue}/${idRecord}`).then((res) => {
     GetData(`${process.env.EXPO_PUBLIC_API_URL}/${enumValue}/${idRecord}`).then((res) => {
     const json = JSON.stringify(res.data);
       setQueryResult(json);
