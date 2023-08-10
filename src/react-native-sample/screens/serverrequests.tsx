@@ -10,7 +10,7 @@ export enum TipObject {
     Customer = 'customers',
 }
 
-export const ServerRequests = ({ navigation }) => {
+export const ServerRequests = () => {
   const [enumValue, setValue] = useState(TipObject.Comment.toString());
 
   const [idRecord, setIdRecord] = useState('');
