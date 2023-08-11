@@ -15,7 +15,7 @@ export const CommentEditForm = ({ route }) => {
   let { commentDate, commentText, customer} = data || {};
   const { name } = customer || {};
 
-  var [, setInputDate] = React.useState(commentDate);
+  let [, setInputDate] = React.useState(commentDate);
   return (
     <SafeAreaProvider>
       <View>
