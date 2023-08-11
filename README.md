@@ -51,7 +51,7 @@ npm install
 2. Запустить проект с помощью Expo CLI:
 
 ```console
-npx expo start
+npx expo start --port 8088
 ```
 
 #### Запуск проекта Expo в браузере

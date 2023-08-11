@@ -11,7 +11,6 @@ import {
 } from './screens/@ScreensExports';
 
 const Stack = createNativeStackNavigator();
-
 export const Navigation = () => {
   return (
     <NavigationContainer>

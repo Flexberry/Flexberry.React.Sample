@@ -8,8 +8,9 @@ import { GetData } from '../../utils/requestController';
 export const CommentListForm = ({ navigation }) => {
 
   const fetcher = (url: string) => GetData(url).then((res: { data: any; }) => res.data);
-  const { data } = useSWR(`${process.env.EXPO_PUBLIC_API_URL}/comments`, fetcher);
-
+  // const { data } = useSWR(`${process.env.EXPO_PUBLIC_API_URL}/comments`, fetcher);
+  const { data } = useSWR(`http://localhost:8081/service/backend/api/comments`, fetcher);
+  
   return (
     <View>
       <Text>Comments list form</Text>
