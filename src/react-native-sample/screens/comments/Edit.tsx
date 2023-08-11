@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from 'react';
 import { Text, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { DatePickerInput } from 'react-native-paper-dates';
@@ -12,7 +12,7 @@ export const CommentEditForm = ({ route }) => {
   const fetcher = (url) => GetData(url).then((res) => res.data);
   // const { data } = useSWR(`${process.env.API_URL}/comments/${id}`, fetcher);
   const { data } = useSWR(`http://localhost:8081/service/backend/api/comments/${id}`, fetcher);
-  var { commentDate, commentText, customer} = data || {};
+  let { commentDate, commentText, customer} = data || {};
   const { name } = customer || {};
 
   var [, setInputDate] = React.useState(commentDate);

@@ -13,7 +13,7 @@ export const CustomerListForm = ({ navigation }) => {
   // const { data } = useSWR(`${process.env.EXPO_PUBLIC_API_URL}/customers`, fetcher);
   return (
     <View>
-      <Text>Customer list form.</Text>
+      <Text>Customer list form</Text>
       <StatusBar style="auto" />
       <DataTable>
          <DataTable.Header>
