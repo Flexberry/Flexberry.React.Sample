@@ -6,7 +6,8 @@ import {
   CommentListForm,
   CommentEditForm,
   CustomerListForm,
-  CustomerEditForm
+  CustomerEditForm,
+  ServerRequests
 } from './screens/@ScreensExports';
 
 const Stack = createNativeStackNavigator();
@@ -44,6 +45,11 @@ export const Navigation = () => {
           name="CustomersE"
           component={CustomerEditForm}
           options={{title: 'Customer edit form'}}
+        />
+        <Stack.Screen
+          name="Requests"
+          component={ServerRequests}
+          options={{title: 'Requests form'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

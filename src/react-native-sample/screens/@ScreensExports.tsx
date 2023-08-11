@@ -4,3 +4,4 @@ export * from './comments/List';
 export * from './comments/Edit';
 export * from './customers/List';
 export * from './customers/Edit';
+export * from './serverrequests';
